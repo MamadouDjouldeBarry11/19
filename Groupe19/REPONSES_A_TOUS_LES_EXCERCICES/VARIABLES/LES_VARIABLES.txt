@@ -1,0 +1,101 @@
+1)
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+       System.out.print("Donnez la valeur de deux entiers ");
+        Scanner saisie=new Scanner(System.in);
+        int a=saisie.nextInt();
+        int b=saisie.nextInt();
+        System.out.println("les valeurs de a et b avant l'echange est: "+a+ " et "+b);
+        a=a+b;
+        b=a-b;
+        a=a-b;
+        System.out.println("les valeurs de a et b après l'echange est: "+a+ " et "+b);
+        
+    }
+}
+
+
+
+
+2)
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        System.out.println("Donner la longeur et la largeur du rectangle");
+        Scanner saisie=new Scanner(System.in);
+        float longueur= saisie.nextFloat();
+        float largeur= saisie.nextFloat();
+        float surface=longueur*largeur;
+        System.out.println("la surface du rectangle est: "+surface+"m²");
+    }
+}
+
+
+3)
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        System.out.println("Donner un nombre et on affiche son carré !");
+        Scanner saisie=new Scanner(System.in);
+        double nb=saisie.nextDouble();
+        System.out.println("le carré de "+nb+ " est:"+(nb*nb));
+
+    }
+}
+
+4)
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        System.out.println("Donner un degré celsius et on le convertit en degré Fahrenheit !");
+        Scanner saisie=new Scanner(System.in);
+        double C=saisie.nextDouble();
+        double F=C*9/5+32;
+        System.out.println(C+"°C donne "+F+"°F");
+        System.out.println("Donner un degré Fahrenheit et on le convertit en degré celsius !");
+        double FA=saisie.nextDouble();
+        double Cel=(5/9)*(FA-32);
+        System.out.println(FA+"°F donne "+Cel+"°C");
+        
+    }
+}
+
+5)
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        System.out.println("Donner trois nombres");
+        Scanner saisie=new Scanner(System.in);
+        double a=saisie.nextDouble();
+        double b=saisie.nextDouble();
+        double c=saisie.nextDouble();
+        double moy=(a+b+c)/3;
+        System.out.println("La moyenne des "+a+", "+b+" et "+c+" est: "+moy);
+    }
+}
+

@@ -1,0 +1,207 @@
+1) un programme pour additionner deux tableaux et stocker le résultat dans un troisième tableau.
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Donner la taille des tableau:");
+        Scanner saisie= new Scanner(System.in);
+        int taille=saisie.nextInt();
+        int[] tab1=new int[taille];
+        int[] tab2=new int[taille];
+        int[] tab3=new int[taille];
+        System.out.println("Donner les élements du 1 tableau");
+        for(int x=0;x<taille;x++){
+            tab1[x]=saisie.nextInt();
+        }
+        System.out.println("Donner les élements du 2em tableau");
+        for(int y=0;y<taille;y++){
+            tab2[y]=saisie.nextInt();
+        }
+        System.out.println("Voici la Sommme des éléments des deux  tableaux");
+        for (int i=0;i<taille;i++){
+            tab3[i]=tab1[i]+tab2[i];
+        }
+        for (int j=0;j<taille;j++){
+            System.out.println(tab3[j]);
+        }
+
+    }
+}
+
+2)  un programme pour trouver la plus grande valeur dans un tableau d'entiers. 
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Entrez la taille du tableau : ");
+        Scanner saisie=new Scanner(System.in);
+        int taille = saisie.nextInt();
+
+        int[] tab = new int[taille];
+
+        System.out.println("Entrez les éléments du tableau : ");
+        for (int i = 0; i < taille; i++) {
+            tab[i] = saisie.nextInt();
+        }
+
+                int max=tab[0];
+                for(int i=1;i<taille;i++){
+                    if(max<tab[i]){
+                        max=tab[i];
+                    }
+                }
+
+        for (int i = 0; i < taille; i++) {
+           System.out.println(tab[i]);
+        }
+            System.out.println("la plus grande valeur du tableau est "+max);
+
+
+        }
+    }
+
+
+3) un programme pour trier un tableau d'entiers par ordre croissant. 
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner saisie=new Scanner(System.in);
+        System.out.println("Donner la taille de votre tableau");
+        int taille=saisie.nextInt();
+        int[] tab=new int [taille];
+        int n= taille;
+        System.out.println("Donner les éléments du tableau:");
+        for(int x=0;x<n;x++){
+            tab[x]=saisie.nextInt();
+        }
+        for (int i=0;i<n-1;i++){
+            int indicemin=i;
+            for(int j=i+1;j<n;j++){
+                if(tab[j]<tab[indicemin]){
+                    indicemin=j;
+                }
+            }
+            int valeur_trouve=tab[indicemin];
+            tab[indicemin]=tab[i];
+            tab[i]=valeur_trouve;
+        }
+        System.out.println("Le tableau trié par ordre croissant est:");
+        for (int y=0;y<tab.length;y++){
+            System.out.println(tab[y]);
+        }
+    }
+}
+
+4)un programme pour fusionner deux tableaux triés en un seul tableau trié. 
+
+
+import java.util.Scanner;
+ class Main {
+    public static void main(String[] args) {
+        Scanner saisie = new Scanner(System.in);
+        System.out.println("Donner la taille des tableaux");
+        int taille = saisie.nextInt();
+        int[] tab1 = new int[taille];
+        int[] tab2 = new int[taille];
+        int[] tab3 = new int[2*taille];
+
+        int n = taille;
+        System.out.println("Donner les élément du 1 tbleau:");
+        for (int x = 0; x < n; x++) {
+            tab1[x] = saisie.nextInt();
+        }
+        for (int i = 0; i < n - 1; i++) {
+            int indicemin = i;
+            for (int j = i + 1; j < n; j++) {
+                if (tab1[j] < tab1[indicemin]) {
+                    indicemin = j;
+                }
+            }
+            int valeur_trouve = tab1[indicemin];
+            tab1[indicemin] = tab1[i];
+            tab1[i] = valeur_trouve;
+        }
+        System.out.println("Le tableau trié par ordres croissant est:");
+        for (int y = 0; y < tab1.length; y++) {
+            System.out.println(tab1[y]);
+        }
+
+        System.out.println("Donner les élément 2 tbleau:");
+        for (int x = 0; x < n; x++) {
+            tab2[x] = saisie.nextInt();
+        }
+        for (int i = 0; i < n - 1; i++) {
+            int indicemin = i;
+            for (int j = i + 1; j < n; j++) {
+                if (tab2[j] < tab2[indicemin]) {
+                    indicemin = j;
+                }
+            }
+            int valeur_trouve = tab2[indicemin];
+            tab2[indicemin] = tab2[i];
+            tab2[i] = valeur_trouve;
+        }
+        System.out.println("Le tableau trié par ordres croissant est:");
+        for (int y = 0; y < tab2.length; y++) {
+            System.out.println(tab2[y]);
+        }
+        System.out.println("Voici la Sommme des éléments des du tableau");
+        for (int i=0;i<tab1.length;i++){
+            tab3[i]=tab1[i];
+        }
+        for (int i=0;i<tab2.length;i++){
+            tab3[tab1.length+i]=tab2[i];
+        }
+
+        for (int i = 0; i < (2*n) - 1; i++) {
+            int indicemin = i;
+            for (int j = i + 1; j < 2*n; j++) {
+                if (tab3[j] < tab3[indicemin]) {
+                    indicemin = j;
+                }
+            }
+            int valeur_trouve = tab3[indicemin];
+            tab3[indicemin] = tab3[i];
+            tab3[i] = valeur_trouve;
+        }
+        System.out.println("La fusion triée de deux tableaux triés par ordres croissant:");
+        for (int y = 0; y < tab3.length; y++) {
+            System.out.println(tab3[y]);
+        }
+
+    }}
+
+
+5) un programme pour compter le nombre d'occurrences d'un élément dans un tableau. 
+
+import java.util.Scanner;
+
+ class Main {
+    public static void main(String[] args) {
+        Scanner saisie = new Scanner(System.in);
+
+        System.out.println("Entrez la taille du tableau : ");
+        int taille = saisie.nextInt();
+
+        int[] tab = new int[taille];
+
+        System.out.println("Entrez les éléments du tableau : ");
+        for (int i = 0; i < taille; i++) {
+            tab[i] = saisie.nextInt();
+        }
+
+        System.out.println("Entrez l'élément dont vous voulez compter les occurrences : ");
+        int elemRechercher = saisie.nextInt();
+
+
+        int cpt = 0;
+        for (int i = 0; i < taille; i++) {
+            if (tab[i] == elemRechercher) {
+                cpt++;
+            }
+        }
+
+        System.out.println("Le nombre d'occurrences de " + elemRechercher + " dans le tableau est : " + cpt);
+    }
+}

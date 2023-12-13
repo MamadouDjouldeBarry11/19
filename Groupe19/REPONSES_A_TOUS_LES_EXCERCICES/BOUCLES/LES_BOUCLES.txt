@@ -1,0 +1,94 @@
+1)
+
+public class Main {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+
+    }
+}
+
+2)
+
+public class Main {
+    public static void main(String[] args) {
+        int i=1;
+        int som=0;
+
+        while (i<=100){
+            som=som+i;
+            i++;
+        }
+        System.out.println("la somme des nombres de 1 à 100 est: "+som);
+
+    }
+}
+
+3)
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("la table de mutiplication doit être de 1 à combien ? ");
+        Scanner saisie=new Scanner(System.in);
+        int tableMu=saisie.nextInt();
+        System.out.println("Donner un nombre ");
+        int nb=saisie.nextInt();
+        for(int i=0;i<=tableMu;i++){
+            System.out.println(i+"X"+nb+"="+(i*nb));
+        }
+    }
+}
+
+4)un programme pour trouver la factorielle d'un nombre donné en utilisant une boucle dowhile
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Donner un nombre pour afficher son factoriel");
+        Scanner saisie=new Scanner(System.in);
+        int nombres=saisie.nextInt();
+        while (nombres<0){
+            System.out.println("Donner un nombre positif");
+            nombres=saisie.nextInt();
+        }
+        int factoriel=1;
+        int i=1;
+        do {
+            factoriel=factoriel*i;
+            i++;
+        }while (i<=nombres);
+        System.out.println("Le factoriel de votre nombre est: "+factoriel);
+    }
+}
+
+
+
+5)Demandez à l'utilisateur de deviner un nombre et utilisez une boucle pour lui donner des indices jusqu'à ce qu'il trouve le bon nombre. 
+ 
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int nombre_deviner =6;
+        System.out.println("Devener un nombre");
+        Scanner saisie=new Scanner(System.in);
+        int nombre=saisie.nextInt();
+        while (nombre>nombre_deviner||nombre<nombre_deviner){
+            if(nombre>nombre_deviner){
+                System.out.println("Taper un nombre plus petit que le nombre que vous venez de saisir");
+                nombre=saisie.nextInt();
+            }
+            if (nombre<nombre_deviner){
+                System.out.println("Taper un nombre plus grand que le nombre que vous venez de saisir");
+                nombre=saisie.nextInt();
+            }
+        }
+        if (nombre==nombre_deviner){
+            System.out.println("Bravo!!!");
+            System.out.println("Vous avez deviner le bon nombre");
+        }
+    }
+}

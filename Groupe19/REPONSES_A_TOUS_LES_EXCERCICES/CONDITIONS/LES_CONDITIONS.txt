@@ -1,0 +1,85 @@
+1)
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Donner un nombre pour tester s'il est paire ou impaire");
+        Scanner saisie=new Scanner(System.in);
+        double nombre=saisie.nextDouble();
+        if(nombre%2!=0){
+            System.out.println("Le nombre saisie est impair");
+        }
+        if(nombre%2==0){
+            System.out.println("Le nombre saisie est pair");
+        }
+    }
+}
+
+
+2)
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Donner votre age");
+        Scanner saisie=new Scanner(System.in);
+        int age=saisie.nextInt();
+        if(age<=0){
+            System.out.println("l'age doit être superieur à 0 ");
+        }
+       else if(age<=18){
+            System.out.println("vous êtes mineur");
+        }
+        else {
+            System.out.println("vous êtes majeur");
+        }
+    }
+}
+
+
+3)
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Donner trois nombres");
+        Scanner saisie=new Scanner(System.in);
+        double a=saisie.nextDouble();
+        double b=saisie.nextDouble();
+        double c=saisie.nextDouble();
+        double max=a;
+        if(max<b){
+          max=b;
+        }
+        if(max<c){
+              max=c;
+            }
+         System.out.println("le maximun entre "+a +" , "+b+ " et  "+c+ " est: "+max );
+        }
+
+    }
+
+
+5)
+
+// ANNE BISSEXTILE
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Donner une année:");
+        Scanner saisie=new Scanner(System.in);
+        int   annee=saisie.nextInt();
+
+        if (((annee%4==0) && (annee%100!=0)) || (annee % 400 == 0)){
+            System.out.println("l'année "+annee+ " est bissextile");
+        }
+        else {
+            System.out.println("l'année "+annee+ " n'est pas bissextile");
+        }
+    }
+
+}
